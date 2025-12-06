@@ -1,26 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 
-.title{
-    color: hotpink;
-    width: 315px;
-    height: 50px;
-    background-color: teal;
+body{
+    font-family: "Pixelify Sans", sans-serif;
+    background-color: #FDEDED;
 }
 
-label{
-    background-color: tomato;
-    width: 315px;
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    width: 400px;
     height: 50px;
+    font-size: 45px;
+    align-content: center;
+    justify-content: center;
+}
+
+
+
+.tarjeta-de-mokepon{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #EDFFF0;
+    align-content: center;
+    margin: 10px;
+    border: 5px solid teal;
+    border-radius: 20px;
 }
 
 input{
-    background-color: aqua;
-    width: 315px;
-    height: 50px;
+    display: none
 }
 
-button{
-    background-color: purple;
+.tarjetas{
+    display: flex;
+}
+
+#boton-mascota{
+    background-color: teal;
     width: 315px;
     height: 50px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 3px solid black;
+    margin: 50px;
 }
