@@ -46,8 +46,8 @@ function seleccionarMascotaJugador(){
     let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
 
 
-    sectionSeleccionarAtaque.style.display = 'block'
-    sectionMensajes.style.display = 'block'
+    sectionSeleccionarAtaque.style.display = 'flex'
+    sectionMensajes.style.display = 'flex'
     sectionSeleccionarMascota.style.display = 'none'
 
     if (inputHipodoge.checked)
@@ -125,16 +125,30 @@ function ataqueEnemy(){
 
 function crearMensaje(resultado){
     let seccionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
+    let mascotaJugador = document.getElementById('mascota-jugador')
     let msgVidasJugador = document.getElementById('vidas-jugador')
+    let msgAtaquePropio = document.createElement('p')
+    let ataquesJugador = document.getElementById('ataques-jugador')
+    let mascotaEnemigo = document.getElementById('mascota-enemigo')
     let msgVidasENemigo = document.getElementById('vidas-enemigo')
+    let msgAtaqueAjeno = document.createElement('p')
+    let ataquesEnemigo = document.getElementById('ataques-enemigo')
+
+    let resultadoCombate = document.getElementById('resultado')
     
-
-    parrafo.innerHTML = 'Tus mascota ataco con '+ataqueJugador+' y el enemigo ataco con '+ataqueEnemigo+'.'+resultado
-    seccionMensajes.appendChild(parrafo)
-
     msgVidasJugador.innerHTML=vidasJugador
     msgVidasENemigo.innerHTML=vidasEnemigo
+
+    msgAtaqueAjeno.innerHTML = ataqueEnemigo
+    msgAtaquePropio.innerHTML = ataqueJugador
+
+    ataquesJugador.appendChild(msgAtaquePropio)
+    ataquesEnemigo.appendChild(msgAtaqueAjeno)
+
+
+    resultadoCombate.innerHTML =resultado
+
+   
 }
 
 function combate(){
@@ -172,10 +186,9 @@ function verificacionVidas(){
 
 function crearMensajeFinal(resultadoFinal){
     let seccionMensajes = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    
-    parrafo.innerHTML = resultadoFinal
-    seccionMensajes.appendChild(parrafo)
+    let resultadoJuego = document.getElementById('resultado')
+
+    resultadoJuego.innerHTML = resultadoFinal
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true
